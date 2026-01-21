@@ -112,6 +112,7 @@
             border: 1px solid #00E0FF;
             font-size: 0.8rem;
             line-height: 1.4;
+            font-weight: 300;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
 
@@ -175,6 +176,11 @@
             transition: 0.3s;
         }
 
+        .skill-box:hover {
+            border-color: #00E0FF;
+            transform: translateY(-5px);
+        }
+
         .box-title {
             font-size: 1.1rem;
             border-bottom: 1px solid #333;
@@ -197,7 +203,7 @@
             display: inline-block;
         }
 
-        /* --- REPORT --- */
+        /* --- AERO DRIVE REPORT --- */
         .report-container {
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -205,6 +211,7 @@
             border-radius: 12px;
             overflow: hidden;
             background-color: #0d1117;
+            box-shadow: 0 0 40px rgba(0, 224, 255, 0.05);
             min-height: 450px;
             margin-bottom: 60px;
         }
@@ -241,10 +248,22 @@
             margin-bottom: 15px;
         }
 
-        /* --- PROJECTS GRID --- */
+        .tech-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .tech-card p {
+            color: #A0AEC0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* --- PROFESSIONAL PROJECTS --- */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 25px;
         }
 
@@ -256,6 +275,7 @@
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -271,49 +291,81 @@
             margin-bottom: 15px;
             border-bottom: 1px solid #222;
             padding-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
+        }
+
+        .project-status {
+            color: #00E0FF;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .company-logo-wrapper {
             background-color: #fff;
-            padding: 5px 12px;
+            padding: 5px 15px;
             border-radius: 6px;
             display: inline-block;
+            transition: all 0.4s ease;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .company-logo-wrapper img {
-            height: 32px;
+            height: 35px;
             width: auto;
+            display: block;
             filter: grayscale(100%) opacity(0.6);
-            transition: 0.4s;
+            transition: all 0.4s ease;
         }
 
         .project-card:hover .company-logo-wrapper img {
             filter: grayscale(0%) opacity(1);
         }
 
+        .company-logo-wrapper:hover {
+            transform: scale(1.05);
+        }
+
         .tech-icons {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             align-items: center;
         }
 
         .tech-icon-img {
-            height: 22px;
+            height: 24px;
             width: auto;
             filter: grayscale(40%);
+            transition: 0.3s;
         }
 
-        /* --- METRICS BAR (Responsive Grid) --- */
+        .tech-icon-img:hover {
+            filter: grayscale(0%) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+            transform: scale(1.1);
+        }
+
+        .project-details ul {
+            padding-left: 20px;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 10px 0 20px 0;
+        }
+
+        .project-details li {
+            margin-bottom: 8px;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
         .metrics-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            display: flex;
+            justify-content: space-around;
             gap: 10px;
             margin-top: auto;
             background-color: rgba(0, 224, 255, 0.03);
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
             border: 1px dashed #222;
         }
@@ -333,18 +385,10 @@
             font-size: 0.65rem;
             color: #777;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* --- FOOTER --- */
-        footer {
-            padding: 40px;
-            color: #555;
-            text-align: center;
-            font-size: 0.9rem;
-            border-top: 1px solid #111;
-            width: 100%;
-        }
-
+        /* --- BUTTONS & FOOTER --- */
         .social-buttons {
             display: flex;
             gap: 20px;
@@ -357,38 +401,43 @@
             text-decoration: none;
             padding: 14px 28px;
             border-radius: 8px;
+            font-weight: 700;
             border: 1px solid #00E0FF;
             color: #00E0FF;
+            transition: 0.3s;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-weight: 700;
         }
 
-        /* --- MOBILE SPECIFIC OVERRIDES --- */
-        @media (max-width: 600px) {
+        .btn:hover {
+            background-color: #00E0FF;
+            color: #01090B;
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
+        }
+
+        footer {
+            padding: 40px;
+            color: #555;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #111;
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .metrics-bar {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            /* Διορθώνει το στρίμωγμα */
-            .card-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
             .report-container {
                 aspect-ratio: 4/3;
-                min-height: 300px;
             }
         }
     </style>
@@ -448,17 +497,23 @@
             </div>
 
             <div class="tech-grid">
-                <div class="tech-card"><i class="fab fa-python"></i>
+                <div class="tech-card">
+                    <i class="fab fa-python"></i>
                     <h3>Data Generation & ETL</h3>
-                    <p>Used <strong>Python (Pandas, Faker)</strong> to generate mock data of 50,000+ records.</p>
+                    <p>Used <strong>Python (Pandas, Faker)</strong> to generate a robust mock dataset of 50,000+
+                        records, simulating real-world inconsistencies and cleaning raw data before ingestion.</p>
                 </div>
-                <div class="tech-card"><i class="fas fa-database"></i>
+                <div class="tech-card">
+                    <i class="fas fa-database"></i>
                     <h3>Data Modeling</h3>
-                    <p>Designed a <strong>Star Schema</strong> optimized for performance.</p>
+                    <p>Designed a <strong>Star Schema</strong> data model optimized for performance. Established
+                        relationships between Fact tables and Dimension tables.</p>
                 </div>
-                <div class="tech-card"><i class="fas fa-chart-bar"></i>
+                <div class="tech-card">
+                    <i class="fas fa-chart-bar"></i>
                     <h3>Advanced Analytics</h3>
-                    <p>Implemented complex <strong>DAX measures</strong> and interactive UI elements.</p>
+                    <p>Implemented complex <strong>DAX measures</strong> (Time Intelligence, YoY Growth) and interactive
+                        UI elements like Drill-throughs and Dynamic Tooltips.</p>
                 </div>
             </div>
         </div>
@@ -473,8 +528,9 @@
                     <div class="card-header">
                         <div>
                             <span class="project-status">Marine Equipment</span>
-                            <a href="https://www.eval.gr/?lang=en-US" target="_blank" class="company-logo-wrapper"><img
-                                    src="eval.png" alt="EVAL Logo"></a>
+                            <a href="https://www.eval.gr/?lang=en-US" target="_blank" class="company-logo-wrapper">
+                                <img src="eval.png" alt="EVAL Logo">
+                            </a>
                         </div>
                         <div class="tech-icons">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
@@ -485,8 +541,10 @@
                     </div>
                     <div class="project-details">
                         <ul>
-                            <li><strong>360° Sales Overview:</strong> Monitoring sales and customer dynamics.</li>
-                            <li><strong>Supplier Performance:</strong> Tracking vendor reliability.</li>
+                            <li><strong>360° Sales Overview:</strong> Monitoring of sales, salespeople, and customer
+                                dynamics.</li>
+                            <li><strong>Supplier Performance:</strong> Tracking vendor reliability and procurement
+                                efficiency.</li>
                         </ul>
                     </div>
                     <div class="metrics-bar">
@@ -503,8 +561,52 @@
                     <div class="card-header">
                         <div>
                             <span class="project-status">Corporate BI</span>
-                            <a href="https://elanet.gr/" target="_blank" class="company-logo-wrapper"><img
-                                    src="elanet.png" alt="ELANET Logo"></a>
+                            <a href="https://elanet.gr/" target="_blank" class="company-logo-wrapper">
+                                <img src="elanet.png" alt="ELANET Logo">
+                            </a>
+                        </div>
+                        <div class="tech-icons">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" title="SAP"
+                                class="tech-icon-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                                title="Python" class="tech-icon-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                title="Power BI" class="tech-icon-img">
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <ul>
+                            <li><strong>Executive Reporting:</strong> Centralized dashboard for project lifecycles.</li>
+                            <li><strong>HR Analytics:</strong> Performance metrics for staff evaluation.</li>
+                            <li><strong>Financial Analytics:</strong> Financial performance monitoring.</li>
+                            <li><strong>Risk Analysis:</strong> Web-based risk assessment framework.</li>
+                        </ul>
+                    </div>
+                    <div class="metrics-bar">
+                        <div class="metric-item"><span class="metric-value">300+</span><span
+                                class="metric-label">Views/day</span></div>
+                        <div class="metric-item"><span class="metric-value">800+</span><span
+                                class="metric-label">Measures</span></div>
+                        <div class="metric-item"><span class="metric-value">180+</span><span
+                                class="metric-label">Tables</span></div>
+                        <div class="metric-item"><span class="metric-value">340+</span><span
+                                class="metric-label">Relationships</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header">
+                        <div>
+                            <span class="project-status">Public Sector</span>
+                            <div style="display:flex; gap:5px;">
+                                <a href="https://minfin.gov.gr/en/" target="_blank" class="company-logo-wrapper">
+                                    <img src="minfin.png" alt="MinFin">
+                                </a>
+                                <a href="https://www.espa.gr/en/Pages/static_espa.aspx" target="_blank"
+                                    class="company-logo-wrapper">
+                                    <img src="espa.png" alt="ESPA">
+                                </a>
+                            </div>
                         </div>
                         <div class="tech-icons">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" title="SAP"
@@ -515,48 +617,22 @@
                     </div>
                     <div class="project-details">
                         <ul>
-                            <li><strong>Executive Reporting:</strong> Centralized management dashboard.</li>
-                            <li><strong>HR & Financial:</strong> Performance and budget monitoring.</li>
-                        </ul>
-                    </div>
-                    <div class="metrics-bar">
-                        <div class="metric-item"><span class="metric-value">800+</span><span
-                                class="metric-label">Measures</span></div>
-                        <div class="metric-item"><span class="metric-value">180+</span><span
-                                class="metric-label">Tables</span></div>
-                        <div class="metric-item"><span class="metric-value">SAP</span><span
-                                class="metric-label">Sync</span></div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-header">
-                        <div>
-                            <span class="project-status">Public Sector</span>
-                            <div style="display:flex; gap:5px;"><a href="https://minfin.gov.gr/en/" target="_blank"
-                                    class="company-logo-wrapper"><img src="minfin.png" alt="MinFin"></a><a
-                                    href="https://www.espa.gr/en/Pages/static_espa.aspx" target="_blank"
-                                    class="company-logo-wrapper"><img src="espa.png" alt="ESPA"></a></div>
-                        </div>
-                        <div class="tech-icons"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" title="SAP"
-                                class="tech-icon-img"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
-                                title="Power BI" class="tech-icon-img"></div>
-                    </div>
-                    <div class="project-details">
-                        <ul>
-                            <li><strong>National Grant Tracker:</strong> Monitoring EU subsidies in Greece.</li>
-                            <li><strong>Operational Synergy:</strong> Cross-departmental workflows.</li>
+                            <li><strong>National Grant Tracker:</strong> Nationwide monitoring for EU subsidies.</li>
+                            <li><strong>Operational Synergy:</strong> Cross-functional reporting for government depts.
+                            </li>
                         </ul>
                     </div>
                     <div class="metrics-bar">
                         <div class="metric-item"><span class="metric-value">National</span><span
                                 class="metric-label">Scale</span></div>
+                        <div class="metric-item"><span class="metric-value">250+</span><span
+                                class="metric-label">Views/day</span></div>
                         <div class="metric-item"><span class="metric-value">350+</span><span
                                 class="metric-label">Measures</span></div>
                         <div class="metric-item"><span class="metric-value">50+</span><span
                                 class="metric-label">Tables</span></div>
+                        <div class="metric-item"><span class="metric-value">100+</span><span
+                                class="metric-label">Relationships</span></div>
                     </div>
                 </div>
 
@@ -564,28 +640,33 @@
                     <div class="card-header">
                         <div>
                             <span class="project-status">Fiber Optic Infrastructure</span>
-                            <a href="https://enomix.gr/" target="_blank" class="company-logo-wrapper"><img
-                                    src="enomix.png" alt="ENOMIX Logo"></a>
+                            <a href="https://enomix.gr/" target="_blank" class="company-logo-wrapper">
+                                <img src="enomix.png" alt="ENOMIX Logo">
+                            </a>
                         </div>
-                        <div class="tech-icons"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
-                                title="PostgreSQL" class="tech-icon-img"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
-                                title="Power BI" class="tech-icon-img"></div>
+                        <div class="tech-icons">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+                                title="PostgreSQL" class="tech-icon-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                title="Power BI" class="tech-icon-img">
+                        </div>
                     </div>
                     <div class="project-details">
                         <ul>
-                            <li><strong>Fiber Optics:</strong> Monitoring system for rollout projects.</li>
-                            <li><strong>Data Integrity:</strong> High-precision PostgreSQL tracking.</li>
+                            <li><strong>Fiber Optics:</strong> Monitoring system for large-scale fiber optic rollout
+                                projects.</li>
+                            <li><strong>Data Integrity:</strong> High-precision tracking via PostgreSQL database.</li>
                         </ul>
                     </div>
                     <div class="metrics-bar">
                         <div class="metric-item"><span class="metric-value">50+</span><span
-                                class="metric-label">Views</span></div>
+                                class="metric-label">Views/day</span></div>
                         <div class="metric-item"><span class="metric-value">20+</span><span
+                                class="metric-label">Measures</span></div>
+                        <div class="metric-item"><span class="metric-value">10+</span><span
                                 class="metric-label">Tables</span></div>
-                        <div class="metric-item"><span class="metric-value">Live</span><span
-                                class="metric-label">Status</span></div>
+                        <div class="metric-item"><span class="metric-value">20+</span><span
+                                class="metric-label">Relationships</span></div>
                     </div>
                 </div>
 
