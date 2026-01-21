@@ -267,7 +267,7 @@
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 25px;
             justify-content: center;
-            /* ΔΙΟΡΘΩΣΗ: Κεντράρισμα καρτών */
+            /* ΔΙΟΡΘΩΣΗ: Κεντράρισμα grid */
         }
 
         .project-card {
@@ -439,7 +439,11 @@
                 font-size: 2.2rem;
             }
 
-            /* ΔΙΟΡΘΩΣΗ: Κεντράρισμα header καρτών στο κινητό */
+            .report-container {
+                aspect-ratio: 4/3;
+            }
+
+            /* ΔΙΟΡΘΩΣΗ: Κεντράρισμα στοιχείων κάρτας στο κινητό */
             .card-header {
                 flex-direction: column;
                 gap: 15px;
@@ -450,8 +454,9 @@
                 justify-content: center;
             }
 
-            .report-container {
-                aspect-ratio: 4/3;
+            .metrics-bar {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
