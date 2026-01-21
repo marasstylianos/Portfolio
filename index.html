@@ -6,38 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stelios Maras | Data Analyst Portfolio</title>
 
-    <meta property="og:title" content="Stelios Maras | Data Analyst Portfolio">
-    <meta property="og:description"
-        content="Explore my Data Analysis & Business Intelligence portfolio. Featured Project: AeroDrive (Power BI, SQL, Python).">
-    <meta property="og:url" content="https://marasstylianos.github.io/Portfolio/">
-    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%2300E0FF%22/><text x=%2250%%22 y=%2252%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2242%22 font-family=%22Roboto, Arial%22 font-weight=%22bold%22 fill=%22%2301090B%22>sm</text></svg>">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- ΒΑΣΙΚΟ ΣΤΥΛ --- */
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- BASIC STYLE --- */
         body {
             margin: 0;
             padding: 0;
             background-color: #01090B;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* --- HEADER --- */
         header {
             text-align: center;
             padding: 60px 20px 30px 20px;
-            max-width: 900px;
+            max-width: 1100px;
             width: 100%;
-            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -47,78 +55,72 @@
             font-size: 3rem;
             margin-bottom: 10px;
             letter-spacing: 2px;
-            line-height: 1.2;
+            font-weight: 700;
         }
 
         .highlight {
             color: #00E0FF;
             text-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
-            display: inline-block;
         }
 
-        p.subtitle {
+        .subtitle {
             color: #A0AEC0;
             font-size: 1.3rem;
-            margin-top: 0;
             margin-bottom: 20px;
             font-weight: 300;
         }
 
-        /* --- HEADER CERT BADGE --- */
         .header-cert-badge {
             background-color: rgba(255, 215, 0, 0.08);
             border: 1px solid #FFD700;
             color: #FFD700;
             padding: 8px 20px;
             border-radius: 30px;
-            font-weight: 600;
             font-size: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
-            transition: transform 0.3s ease;
+            transition: 0.3s;
         }
 
         .header-cert-badge:hover {
             transform: scale(1.05);
-            background-color: rgba(255, 215, 0, 0.15);
         }
 
-        /* --- BIO --- */
+        /* --- ALIGNMENT WRAPPER --- */
+        .wrapper {
+            max-width: 1100px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* --- BIO BOX --- */
         .bio-container {
             background-color: #0d1117;
             padding: 25px 35px;
             border-radius: 12px;
             border: 1px solid #333;
-            max-width: 1000px;
-            width: 90%;
-            margin-top: 30px;
-            margin-bottom: 40px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            box-sizing: border-box;
         }
 
         p.bio {
             color: #ccc;
             line-height: 1.7;
             font-size: 1.05rem;
-            margin-top: 0;
             text-align: justify;
+            font-weight: 300;
+            margin: 0;
         }
 
-        p.bio strong {
-            color: #ffffff;
-        }
-
-        /* --- STRUCTURED SKILLS SECTION --- */
+        /* --- SKILLS --- */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            width: 90%;
-            max-width: 1000px;
-            margin-bottom: 50px;
         }
 
         .skill-box {
@@ -126,35 +128,23 @@
             border: 1px solid #333;
             border-radius: 10px;
             padding: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            transition: transform 0.3s ease;
+            transition: 0.3s;
         }
 
         .skill-box:hover {
             border-color: #00E0FF;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .box-title {
             font-size: 1.1rem;
-            color: #fff;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .box-title i {
-            color: #00E0FF;
-        }
-
-        .tags-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            font-weight: 500;
         }
 
         .skill-tag {
@@ -164,61 +154,34 @@
             padding: 6px 14px;
             border-radius: 6px;
             font-size: 0.9rem;
-            font-weight: 500;
+            margin: 0 5px 5px 0;
+            display: inline-block;
         }
 
-        /* --- SECTIONS TITLES --- */
-        h2.section-title {
-            color: #ffffff;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            font-weight: 300;
-            text-align: center;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            width: 90%;
-            max-width: 800px;
-        }
-
-        h2.section-title strong {
-            color: #00E0FF;
-            font-weight: 600;
-        }
-
-        /* --- REPORT CONTAINER --- */
+        /* --- AERO DRIVE REPORT --- */
         .report-container {
-            width: 95%;
-            max-width: 1240px;
-            position: relative;
-            height: 0%;
-            padding-bottom: 35%;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             border: 1px solid #333;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 0 40px rgba(0, 224, 255, 0.05);
-            margin-bottom: 20px;
             background-color: #0d1117;
+            box-shadow: 0 0 40px rgba(0, 224, 255, 0.05);
+            min-height: 450px;
+            margin-bottom: 60px;
         }
 
         iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: none;
         }
 
-        /* --- TECHNICAL BREAKDOWN --- */
+        /* --- TECH GRID --- */
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            width: 90%;
-            max-width: 1000px;
-            margin-bottom: 50px;
         }
 
         .tech-card {
@@ -226,12 +189,12 @@
             border: 1px solid #333;
             border-radius: 10px;
             padding: 25px;
-            transition: transform 0.3s ease;
+            transition: 0.3s;
         }
 
         .tech-card:hover {
-            transform: translateY(-5px);
             border-color: #00E0FF;
+            transform: translateY(-5px);
         }
 
         .tech-card i {
@@ -249,138 +212,192 @@
             color: #A0AEC0;
             font-size: 0.95rem;
             line-height: 1.5;
-            margin: 0;
+            font-weight: 300;
         }
 
-        /* --- LOGO GRID --- */
-        .clients-container {
-            width: 90%;
-            max-width: 1000px;
-            margin-bottom: 60px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+        /* --- PROFESSIONAL PROJECTS --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
         }
 
-        .client-logo-box {
-            background-color: #ffffff;
-            width: 160px;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            padding: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .client-logo-box img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            filter: grayscale(100%);
+        .project-card {
+            background-color: #0d1117;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
             transition: all 0.4s ease;
-            opacity: 0.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .client-logo-box:hover {
+        .project-card:hover {
+            border-color: #00E0FF;
             transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .client-logo-box:hover img {
-            filter: grayscale(0%);
-            opacity: 1;
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 15px;
         }
 
-        /* --- CONTACT BUTTONS --- */
+        .project-status {
+            color: #00E0FF;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* --- LOGO WRAPPER (Updated to be Link) --- */
+        .company-logo-wrapper {
+            background-color: #fff;
+            padding: 5px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            /* Αφαίρεση υπογράμμισης */
+            cursor: pointer;
+        }
+
+        .company-logo-wrapper img {
+            height: 35px;
+            width: auto;
+            display: block;
+            filter: grayscale(100%) opacity(0.6);
+            transition: all 0.4s ease;
+        }
+
+        /* Hover Effects */
+        .project-card:hover .company-logo-wrapper img {
+            filter: grayscale(0%) opacity(1);
+        }
+
+        .company-logo-wrapper:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- REAL ICONS --- */
+        .tech-icons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .tech-icon-img {
+            height: 24px;
+            width: auto;
+            filter: grayscale(40%);
+            transition: 0.3s;
+        }
+
+        .tech-icon-img:hover {
+            filter: grayscale(0%) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+            transform: scale(1.1);
+        }
+
+        /* --- DETAILS & METRICS --- */
+        .project-details ul {
+            padding-left: 20px;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 10px 0 20px 0;
+        }
+
+        .project-details li {
+            margin-bottom: 8px;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        .metrics-bar {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+            margin-top: auto;
+            background-color: rgba(0, 224, 255, 0.03);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px dashed #222;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #00E0FF;
+        }
+
+        .metric-label {
+            font-size: 0.65rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- BUTTONS & FOOTER --- */
         .social-buttons {
-            margin-bottom: 50px;
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            width: 95%;
+            margin-bottom: 60px;
         }
 
         .btn {
             text-decoration: none;
-            padding: 12px 25px;
+            padding: 14px 28px;
             border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 1rem;
-        }
-
-        .btn-linkedin {
-            background-color: #0077b5;
-            color: white;
-            border: 1px solid #0077b5;
-        }
-
-        .btn-linkedin:hover {
-            background-color: #005e93;
-            transform: translateY(-2px);
-        }
-
-        .btn-email {
-            background-color: transparent;
+            font-weight: 700;
             border: 1px solid #00E0FF;
             color: #00E0FF;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .btn-email:hover {
+        .btn:hover {
             background-color: #00E0FF;
             color: #01090B;
-            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
         }
 
-        /* --- FOOTER --- */
         footer {
-            margin-bottom: 30px;
+            padding: 40px;
             color: #555;
-            font-size: 0.9rem;
             text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #111;
+            width: 100%;
         }
 
-        footer a {
-            color: #00E0FF;
-            text-decoration: none;
-        }
-
-        /* MEDIA QUERIES */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .tech-grid,
-            .skills-grid {
+        @media (max-width: 900px) {
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
+        }
 
-            h2.section-title {
-                font-size: 1.5rem;
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
             }
 
-            .clients-container {
-                gap: 15px;
-            }
-
-            .client-logo-box {
-                width: 130px;
-                height: 70px;
-            }
-
-            .header-cert-badge {
-                text-align: center;
+            .report-container {
+                aspect-ratio: 4/3;
             }
         }
     </style>
@@ -391,121 +408,231 @@
     <header>
         <h1>Hi, I'm <span class="highlight">Stelios Maras</span></h1>
         <p class="subtitle">Data Analyst & Business Intelligence Developer</p>
-
-        <div class="header-cert-badge">
-            <i class="fas fa-certificate"></i> Microsoft Certified: Power BI Data Analyst Associate
-        </div>
+        <div class="header-cert-badge"><i class="fas fa-certificate"></i> Microsoft Certified: Power BI Data Analyst
+            Associate</div>
     </header>
 
-    <div class="bio-container">
-        <p class="bio">
-            I am a <strong>Data Analyst & Business Intelligence Specialist</strong> based in Athens, Greece, with a
-            passion for transforming raw data into actionable business insights. <br><br>
-            My expertise lies in end-to-end data solutions, from data extraction (SQL) and transformation
-            (Python) to building robust data models and interactive dashboards in <strong>Microsoft Power
-                BI</strong>. <br><br>
-            I specialize in creating intuitive, high-performance reports that help stakeholders make data-driven
-            decisions confidently. My goal is to bridge the gap between technical data and business strategy.
-        </p>
-    </div>
+    <div class="wrapper">
 
-    <div class="skills-grid">
-
-        <div class="skill-box">
-            <div class="box-title">
-                <i class="fas fa-code"></i> Languages & Tools
-            </div>
-            <div class="tags-wrapper">
-                <span class="skill-tag">Microsoft Power BI</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">Python</span>
-            </div>
-        </div>
-
-        <div class="skill-box">
-            <div class="box-title">
-                <i class="fas fa-layer-group"></i> Analytics & Modeling
-            </div>
-            <div class="tags-wrapper">
-                <span class="skill-tag">DAX Measures</span>
-                <span class="skill-tag">Data Modeling</span>
-                <span class="skill-tag">ETL Process</span>
-            </div>
-        </div>
-
-    </div>
-
-    <h2 class="section-title">Featured Project: <strong>AeroDrive</strong></h2>
-
-    <div class="report-container">
-        <iframe title="AeroDrive"
-            src="https://app.powerbi.com/view?r=eyJrIjoiYjgxODU2MTItN2QyYS00MDZhLTg3MjAtNTk1OTVmMDVkMmQyIiwidCI6IjUxZjljNDU2LTdhOGUtNGJkNy04MzkyLWI5MjU3YWZmYzBkMSIsImMiOjl9"
-            frameborder="0" allowFullScreen="true">
-        </iframe>
-    </div>
-
-    <div class="tech-grid">
-        <div class="tech-card">
-            <i class="fab fa-python"></i>
-            <h3>Data Generation & ETL</h3>
-            <p>
-                Used <strong>Python (Pandas, Faker)</strong> to generate a robust mock dataset of 50,000+ sales records,
-                simulating real-world inconsistencies and cleaning raw data before ingestion.
+        <div class="bio-container">
+            <p class="bio">
+                I am a <strong>Data Analyst & Business Intelligence Specialist</strong> based in Athens, Greece, with a
+                passion for transforming raw data into actionable business insights. <br><br>
+                My expertise lies in end-to-end data solutions, from data extraction (SQL) and transformation (Python)
+                to building robust data models and interactive dashboards in <strong>Microsoft Power BI</strong>.
             </p>
         </div>
-        <div class="tech-card">
-            <i class="fas fa-database"></i>
-            <h3>Data Modeling</h3>
-            <p>
-                Designed a <strong>Star Schema</strong> data model optimized for performance. Established relationships
-                between Fact tables (Sales) and Dimension tables (Dates, Locations, Products).
-            </p>
+
+        <div class="skills-grid">
+            <div class="skill-box">
+                <div class="box-title"><i class="fas fa-code"></i> Languages & Tools</div>
+                <div class="skill-tag">Microsoft Power BI</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Python</div>
+            </div>
+            <div class="skill-box">
+                <div class="box-title"><i class="fas fa-layer-group"></i> Analytics & Modeling</div>
+                <div class="skill-tag">DAX Measures</div>
+                <div class="skill-tag">Data Modeling</div>
+                <div class="skill-tag">ETL Process</div>
+            </div>
         </div>
-        <div class="tech-card">
-            <i class="fas fa-chart-bar"></i>
-            <h3>Advanced Analytics</h3>
-            <p>
-                Implemented complex <strong>DAX measures</strong> (Time Intelligence, YoY Growth) and interactive UI
-                elements like Page Navigation, Drill-throughs, and Dynamic Tooltips.
-            </p>
+
+        <div>
+            <h2 style="text-align: center; font-weight: 300; margin-bottom: 30px;">Featured Demo: <strong
+                    style="color: #00E0FF;">AeroDrive Dashboard</strong></h2>
+            <div class="report-container">
+                <iframe title="AeroDrive"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiYjgxODU2MTItN2QyYS00MDZhLTg3MjAtNTk1OTVmMDVkMmQyIiwidCI6IjUxZjljNDU2LTdhOGUtNGJkNy04MzkyLWI5MjU3YWZmYzBkMSIsImMiOjl9"
+                    allowFullScreen="true"></iframe>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Data Generation & ETL</h3>
+                    <p>Used <strong>Python (Pandas, Faker)</strong> to generate a robust mock dataset of 50,000+
+                        records, simulating real-world inconsistencies and cleaning raw data before ingestion.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Modeling</h3>
+                    <p>Designed a <strong>Star Schema</strong> data model optimized for performance. Established
+                        relationships between Fact tables and Dimension tables.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Advanced Analytics</h3>
+                    <p>Implemented complex <strong>DAX measures</strong> (Time Intelligence, YoY Growth) and interactive
+                        UI elements like Drill-throughs and Dynamic Tooltips.</p>
+                </div>
+            </div>
         </div>
+
+        <div>
+            <h2 style="text-align: center; font-weight: 300; margin-bottom: 40px;">Professional <strong
+                    style="color: #00E0FF;">Experience & Projects</strong></h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="card-header">
+                        <div>
+                            <span class="project-status">Marine Equipment</span>
+                            <a href="https://www.eval.gr/?lang=en-US" target="_blank" class="company-logo-wrapper">
+                                <img src="eval.png" alt="EVAL Logo">
+                            </a>
+                        </div>
+                        <div class="tech-icons">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
+                                title="SQL" class="tech-icon-img" style="filter:invert(1)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                title="Power BI" class="tech-icon-img">
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <ul>
+                            <li><strong>360° Sales Overview:</strong> Monitoring of sales, salespeople, and customer
+                                dynamics.</li>
+                            <li><strong>Supplier Performance:</strong> Tracking vendor reliability and procurement
+                                efficiency.</li>
+                        </ul>
+                    </div>
+                    <div class="metrics-bar">
+                        <div class="metric-item"><span class="metric-value">50+</span><span
+                                class="metric-label">Measures</span></div>
+                        <div class="metric-item"><span class="metric-value">Live</span><span
+                                class="metric-label">Tracking</span></div>
+                        <div class="metric-item"><span class="metric-value">Active</span><span
+                                class="metric-label">Status</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header">
+                        <div>
+                            <span class="project-status">Corporate BI</span>
+                            <a href="https://elanet.gr/" target="_blank" class="company-logo-wrapper">
+                                <img src="elanet.png" alt="ELANET Logo">
+                            </a>
+                        </div>
+                        <div class="tech-icons">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" title="SAP"
+                                class="tech-icon-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                                title="Python" class="tech-icon-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                title="Power BI" class="tech-icon-img">
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <ul>
+                            <li><strong>Executive Reporting:</strong> Centralized dashboard for project lifecycles.</li>
+                            <li><strong>HR Analytics:</strong> Performance metrics for staff evaluation.</li>
+                            <li><strong>Financial Analytics:</strong> Financial performance monitoring.</li>
+                            <li><strong>Risk Analysis:</strong> Web-based risk assessment framework.</li>
+                        </ul>
+                    </div>
+                    <div class="metrics-bar">
+                        <div class="metric-item"><span class="metric-value">300+</span><span
+                                class="metric-label">Views/day</span></div>
+                        <div class="metric-item"><span class="metric-value">800+</span><span
+                                class="metric-label">Measures</span></div>
+                        <div class="metric-item"><span class="metric-value">180+</span><span
+                                class="metric-label">Tables</span></div>
+                        <div class="metric-item"><span class="metric-value">340+</span><span
+                                class="metric-label">Relationships</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header">
+                        <div>
+                            <span class="project-status">Public Sector</span>
+                            <div style="display:flex; gap:5px;">
+                                <a href="https://minfin.gov.gr/en/" target="_blank" class="company-logo-wrapper">
+                                    <img src="minfin.png" alt="MinFin">
+                                </a>
+                                <a href="https://21-27.antagonistikotita.gr/en/programme-competitiveness/"
+                                    target="_blank" class="company-logo-wrapper">
+                                    <img src="espa.png" alt="ESPA">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tech-icons">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" title="SAP"
+                                class="tech-icon-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                title="Power BI" class="tech-icon-img">
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <ul>
+                            <li><strong>National Grant Tracker:</strong> Nationwide monitoring for EU subsidies.</li>
+                            <li><strong>Operational Synergy:</strong> Cross-functional reporting for government depts.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="metrics-bar">
+                        <div class="metric-item"><span class="metric-value">National</span><span
+                                class="metric-label">Scale</span></div>
+                        <div class="metric-item"><span class="metric-value">250+</span><span
+                                class="metric-label">Views/day</span></div>
+                        <div class="metric-item"><span class="metric-value">350+</span><span
+                                class="metric-label">Measures</span></div>
+                        <div class="metric-item"><span class="metric-value">50+</span><span
+                                class="metric-label">Tables</span></div>
+                        <div class="metric-item"><span class="metric-value">100+</span><span
+                                class="metric-label">Relationships</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header">
+                        <div>
+                            <span class="project-status">Fiber Optic Infrastructure</span>
+                            <a href="https://enomix.gr/" target="_blank" class="company-logo-wrapper">
+                                <img src="enomix.png" alt="ENOMIX Logo">
+                            </a>
+                        </div>
+                        <div class="tech-icons">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+                                title="PostgreSQL" class="tech-icon-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                title="Power BI" class="tech-icon-img">
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <ul>
+                            <li><strong>Fiber Optics:</strong> Monitoring system for large-scale fiber optic rollout
+                                projects.</li>
+                            <li><strong>Data Integrity:</strong> High-precision tracking via PostgreSQL database.</li>
+                        </ul>
+                    </div>
+                    <div class="metrics-bar">
+                        <div class="metric-item"><span class="metric-value">50+</span><span
+                                class="metric-label">Views/day</span></div>
+                        <div class="metric-item"><span class="metric-value">20+</span><span
+                                class="metric-label">Measures</span></div>
+                        <div class="metric-item"><span class="metric-value">10+</span><span
+                                class="metric-label">Tables</span></div>
+                        <div class="metric-item"><span class="metric-value">20+</span><span
+                                class="metric-label">Relationships</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-
-    <h2 class="section-title">Professional <strong>Collaborations</strong></h2>
-
-    <div class="clients-container">
-
-        <a href="https://elanet.gr/" target="_blank" class="client-logo-box">
-            <img src="elanet.png" alt="ELANET">
-        </a>
-
-        <a href="https://minfin.gov.gr/" target="_blank" class="client-logo-box">
-            <img src="minfin.png" alt="Ministry of Finance">
-        </a>
-
-        <a href="http://espa.gr/el/pages/default.aspx" target="_blank" class="client-logo-box">
-            <img src="espa.png" alt="espa">
-        </a>
-
-        <a href="https://enomix.gr/" target="_blank" class="client-logo-box">
-            <img src="enomix.png" alt="Enomix">
-        </a>
-
-        <a href="https://www.eval.gr/?lang=en-US" target="_blank" class="client-logo-box">
-            <img src="eval.png" alt="Eval">
-        </a>
-
-    </div>
-
     <div class="social-buttons">
-        <a href="https://www.linkedin.com/in/stylianos-maras" target="_blank" class="btn btn-linkedin">
-            <i class="fab fa-linkedin"></i> Connect on LinkedIn
-        </a>
-        <a href="mailto:maras.stylianos@gmail.com" class="btn btn-email">
-            <i class="fas fa-envelope"></i> Contact Me
-        </a>
+        <a href="https://www.linkedin.com/in/stylianos-maras" target="_blank" class="btn"><i
+                class="fab fa-linkedin"></i> LinkedIn Profile</a>
+        <a href="mailto:maras.stylianos@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
     </div>
 
-    <footer>Designed by Stelios | Powered by <a href="#">Power BI</a></footer>
+    <footer>Designed by Stelios | Data Analysis & BI Solutions</footer>
 
 </body>
+
+</html>
